@@ -71,3 +71,10 @@ function sleepLevelMinus() {
 
 // let sleepCountSaver = localStorage.setItem('sleepCount', sleepCount);
 // localStorage.getItem('sleepCount', sleepCount);
+
+// баланс
+// падает до отрицательного
+
+const balance = document.getElementById('balance');
+let balanceCount = 100000;
+balance.innerHTML ="Карманные деньги: " + balanceCount + "$";
