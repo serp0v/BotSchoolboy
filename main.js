@@ -42,3 +42,32 @@ function getPlayerID() {
 }
 
 getPlayerID();
+
+// уровень сна
+// данные обнуляются после перезагрузки
+
+let sleepCount = 100;
+let sleepLevel = document.getElementById('sleepLevel');
+sleepLevel.innerHTML = "Уровень сна: " + sleepCount + "%";
+
+const sleepLevelEvent = document.getElementById('sleepLevelEvent').onclick = () =>{
+  if (sleepCount >= 5) {
+  sleepLevelMinus();
+  }
+};
+
+setInterval(() => {
+  if (sleepCount < 100) {
+    sleepCount = sleepCount + 1;
+    sleepLevel.innerHTML = "Уровень сна: " + sleepCount + "%";
+  }
+}, 1000);
+// }, 288000);
+
+function sleepLevelMinus() {
+  sleepCount = sleepCount - 5;
+  sleepLevel.innerHTML = "Уровень сна: " + sleepCount + "%";
+}
+
+// let sleepCountSaver = localStorage.setItem('sleepCount', sleepCount);
+// localStorage.getItem('sleepCount', sleepCount);
