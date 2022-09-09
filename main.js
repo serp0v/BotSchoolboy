@@ -27,3 +27,18 @@ const timePad = () => {
 }
 
 timePad();
+
+
+// ID игрока
+// сохранение в localStorage
+
+function getPlayerID() {
+	let playerID = localStorage.getItem('PlayerID', 0);
+	if (playerID == null) {
+		playerID = new Date().getTime();
+		localStorage.setItem('PlayerID', playerID);
+	}
+	return playerID;
+}
+
+getPlayerID();
