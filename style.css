@@ -1,0 +1,21 @@
+body, html {
+    height: 100vh;
+    width: 100vw;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.informer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    height: 10%;
+    width: 10%;
+}
+.informer > div {
+    display: flex;
+    /* flex-direction: row; */
+    align-items: center;
+}
