@@ -105,3 +105,27 @@ const cardToBalanceOperation = document.getElementById('cardToBalanceOperation')
     console.log('error');
   }
 } ;
+// Уровень
+
+const level = document.getElementById('level');
+let levelCount = 1;
+let levelCountMax = 11;
+level.innerHTML ="Уровень: " + levelCount;
+let levelUpCost = 1000;
+
+const buyLevel = document.getElementById('buyLevel').onclick = () =>{
+  balance.innerHTML ="Карманные деньги: " + balanceCount + "$";
+  if (levelCount < levelCountMax && balanceCount >= levelUpCost) {
+    levelCount = levelCount + 1;
+    level.innerHTML ="Уровень: " + levelCount;
+    balanceCount = balanceCount - levelUpCost;
+    balance.innerHTML ="Карманные деньги: " + balanceCount + "$";
+    levelUpCost = levelUpCost * 2;
+  }
+  if (levelCount >= levelCountMax) {
+    console.log("У вас максимальный уровень");
+  }
+  if (balanceCount < levelUpCost) {
+    console.log("У вас не хватает денег на новый уровень");
+  }
+}
