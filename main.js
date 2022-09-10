@@ -89,3 +89,19 @@ setInterval(() => {
 
   }
 }, 1000);
+
+// Денежные операции
+
+const cardToBalanceOperation = document.getElementById('cardToBalanceOperation').onclick = () => {
+  const cardToBalance = document.getElementById('cardToBalance').value;
+  console.log(cardToBalance);
+  if (cardToBalance <= bankCardCount) {
+    balanceCount = bankCardCount - +cardToBalance;
+    bankCardCount = bankCardCount + +cardToBalance;
+    bankCard.innerHTML ="На карте: " + bankCardCount + "$";
+    balance.innerHTML ="Карманные деньги: " + balanceCount + "$";
+  }
+  if (cardToBalance > bankCardCount) {
+    console.log('error');
+  }
+} ;
