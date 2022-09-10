@@ -69,12 +69,23 @@ function sleepLevelMinus() {
   sleepLevel.innerHTML = "Уровень сна: " + sleepCount + "%";
 }
 
-// let sleepCountSaver = localStorage.setItem('sleepCount', sleepCount);
-// localStorage.getItem('sleepCount', sleepCount);
-
 // баланс
 // падает до отрицательного
 
 const balance = document.getElementById('balance');
 let balanceCount = 100000;
 balance.innerHTML ="Карманные деньги: " + balanceCount + "$";
+
+// Карточка
+
+const bankCard = document.getElementById('bankCard');
+let bankCardCount = 10000;
+bankCard.innerHTML ="На карте: " + bankCardCount + "$";
+
+setInterval(() => {
+  if (bankCardCount) {
+    bankCardCount = Math.round(bankCardCount + (bankCardCount/100));
+    bankCard.innerHTML = "На карте: " + bankCardCount + "$";
+
+  }
+}, 1000);

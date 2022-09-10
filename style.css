@@ -5,14 +5,29 @@ body, html {
     margin: 0;
     box-sizing: border-box;
 }
+.wrapper {
+    display: flex;
+    flex-direction: row;
+}
+.informerColumn {
+    height: 100vh;
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.left {
+    background-color: rgb(99, 255, 110);
+}
 .informer {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 0 auto;
+    /* margin: 0 auto; */
+    /* flex-direction: row; */
     height: 10%;
-    width: 10%;
+    width: 100%;
 }
 .informer > div {
     display: flex;
