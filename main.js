@@ -18,12 +18,12 @@ const time = today.toLocaleTimeString("ru-RU", {year: 'numeric', month: '2-digit
 
 const timePad = () => {
   let PlayerRegDate = localStorage.getItem('PlayerRegDate', 0);
+  let nickName = "Alexandr";
   if (PlayerRegDate == null) {
     localStorage.setItem('PlayerRegDate', time);
     playerNick.innerHTML = nickName + ", дата регистрации: " + time;
   }
-  let nickName = "Alexandr";
-  playerNick.innerHTML = nickName + ", дата регистрации: " + localStorage.getItem('PlayerRegDate', time);
+  playerNick.innerHTML = nickName + ", дата регистрации: " + localStorage.getItem('PlayerRegDate');
 }
 
 timePad();
@@ -32,13 +32,15 @@ timePad();
 // ID игрока
 // сохранение в localStorage
 
+const playerIdDom = document.querySelector('#playerIdDom');
+let playerID = localStorage.getItem('PlayerID', 0);
+
 function getPlayerID() {
-	let playerID = localStorage.getItem('PlayerID', 0);
 	if (playerID == null) {
 		playerID = new Date().getTime();
 		localStorage.setItem('PlayerID', playerID);
 	}
-	return playerID;
+  playerIdDom.innerHTML = "Ваш ID: " + localStorage.getItem('PlayerID').slice(3);
 }
 
 getPlayerID();
@@ -84,7 +86,7 @@ bankCard.innerHTML ="На карте: " + bankCardCount + "$";
 
 setInterval(() => {
   if (bankCardCount) {
-    bankCardCount = Math.round(bankCardCount + (bankCardCount/100));
+    bankCardCount = Math.round(bankCardCount + (bankCardCount/1000));
     bankCard.innerHTML = "На карте: " + bankCardCount + "$";
 
   }
@@ -129,3 +131,23 @@ const buyLevel = document.getElementById('buyLevel').onclick = () =>{
     console.log("У вас не хватает денег на новый уровень");
   }
 }
+// Имущество
+
+const cars = document.getElementById('cars');
+let carCounter = 0;
+const buyCar = document.getElementById('buyCar').onclick = () =>{
+  balanceCount = balanceCount - car1;
+  balance.innerHTML ="Карманные деньги: " + balanceCount + "$";
+  carCounter = carCounter + 1;
+  cars.innerHTML ="Машина: " + carCounter;
+  if (balanceCount < car1) {
+    console.log("Недостаточно денег");
+    carCounter = carCounter - 1;
+    balanceCount = balanceCount + car1;
+    cars.innerHTML ="Машина: " + carCounter;
+  }
+};
+
+cars.innerHTML ="Машина: " + carCounter;
+
+let car1 = 5000;
