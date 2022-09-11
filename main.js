@@ -167,3 +167,28 @@ function workReward() {
   balanceCount = balanceCount + 2467;
   balance.innerHTML ="Карманные деньги: " + balanceCount + "$";
 }
+
+// Магазин
+
+// const shop = document.getElementById("shop");
+// const Consumables = document.getElementByid("Consumables");
+
+let energyDrinkCost = 1000;
+
+const energyDrink = document.getElementById("energyDrink").onclick = () => {
+  if (balanceCount > energyDrinkCost) {
+    balanceCount = balanceCount - energyDrinkCost;
+    balance.innerHTML ="Карманные деньги: " + balanceCount + "$";
+    if (sleepCount > 50) {
+      sleepCount = 100;
+      sleepLevel.innerHTML = "Уровень сна: " + sleepCount + "%";
+    }
+    else {
+      sleepCount = sleepCount + 50;
+      sleepLevel.innerHTML = "Уровень сна: " + sleepCount + "%";
+    }
+  }
+  else {
+    console.log("Не хватило денег на энергетик")
+  }
+};
