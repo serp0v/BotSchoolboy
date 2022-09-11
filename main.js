@@ -151,3 +151,19 @@ const buyCar = document.getElementById('buyCar').onclick = () =>{
 cars.innerHTML ="Машина: " + carCounter;
 
 let car1 = 5000;
+
+// let carsArray = [];
+
+// Работы
+
+const work = document.getElementById('work').onclick = () => {
+  if (sleepCount >= 5) {
+    sleepLevelMinus();
+    workReward();
+  }
+};
+
+function workReward() {
+  balanceCount = balanceCount + 2467;
+  balance.innerHTML ="Карманные деньги: " + balanceCount + "$";
+}
