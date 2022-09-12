@@ -88,7 +88,6 @@ setInterval(() => {
   if (bankCardCount) {
     bankCardCount = Math.round(bankCardCount + (bankCardCount/1000));
     bankCard.innerHTML = "На карте: " + bankCardCount + "$";
-
   }
 }, 1000);
 
@@ -192,3 +191,29 @@ const energyDrink = document.getElementById("energyDrink").onclick = () => {
     console.log("Не хватило денег на энергетик")
   }
 };
+
+// const grandma = document.querySelector("#grandma");
+const mother = document.querySelector("#mother");
+
+// let grandmaBonusTimer = 168;
+let motherBonusTimer = 24;
+
+// let grandmaBonusCount = 10000;
+let motherBonusCount = 3000;
+
+// mother.innerHTML = "До получения бонуса от бабушки: " + motherBonusTimer + " часов.";
+grandma.innerHTML = "До получения бонуса от бабушки: " + grandmaBonusTimer + " часов.";
+
+// Награда мамы
+
+setInterval(() => {
+  if (motherBonusTimer > 0) {
+    motherBonusTimer = motherBonusTimer - 1;
+    mother.innerHTML = "До получения бонуса от бабушки: " + motherBonusTimer + " часов.";
+  }
+  if (motherBonusTimer <= 0){
+    motherBonusTimer = 24;
+    balanceCount = balanceCount + motherBonusCount;
+    balance.innerHTML ="Карманные деньги: " + balanceCount + "$";
+  }
+}, 100);
