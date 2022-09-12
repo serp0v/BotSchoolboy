@@ -231,3 +231,22 @@ setInterval(() => {
     balance.innerHTML ="Карманные деньги: " + balanceCount + "$";
   }
 }, 100);
+
+// Динамическая валюта
+
+function randomInteger(min, max) {
+  // случайное число от min до (max+1)
+  let rand = min + Math.random() * (max + 1 - min);
+  return Math.floor(rand);
+}
+
+const dynamicCoin = document.querySelector('#dynamicCoin');
+let dynamicCoinCount = randomInteger(1000,2000);
+console.log(dynamicCoinCount, "12")
+dynamicCoin.innerHTML = "Текущий курс валюты: " + dynamicCoinCount;
+
+setInterval(() => {
+  let dynamicCoinCount = randomInteger(1000,2000);
+  console.log(dynamicCoinCount, "123")
+  dynamicCoin.innerHTML = "Текущий курс валюты: " + dynamicCoinCount;
+}, 100);
