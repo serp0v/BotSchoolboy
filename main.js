@@ -192,17 +192,17 @@ const energyDrink = document.getElementById("energyDrink").onclick = () => {
   }
 };
 
-// const grandma = document.querySelector("#grandma");
+const grandma = document.querySelector("#grandma");
 const mother = document.querySelector("#mother");
 
-// let grandmaBonusTimer = 168;
 let motherBonusTimer = 24;
+let grandmaBonusTimer = 168;
 
-// let grandmaBonusCount = 10000;
 let motherBonusCount = 3000;
+let grandmaBonusCount = 10000;
 
-// mother.innerHTML = "До получения бонуса от бабушки: " + motherBonusTimer + " часов.";
 grandma.innerHTML = "До получения бонуса от бабушки: " + grandmaBonusTimer + " часов.";
+mother.innerHTML = "До получения бонуса от бабушки: " + motherBonusTimer + " часов.";
 
 // Награда мамы
 
@@ -214,6 +214,20 @@ setInterval(() => {
   if (motherBonusTimer <= 0){
     motherBonusTimer = 24;
     balanceCount = balanceCount + motherBonusCount;
+    balance.innerHTML ="Карманные деньги: " + balanceCount + "$";
+  }
+}, 100);
+
+// Награда бабушки
+
+setInterval(() => {
+  if (grandmaBonusTimer > 0) {
+    grandmaBonusTimer = grandmaBonusTimer - 1;
+    grandma.innerHTML = "До получения бонуса от бабушки: " + grandmaBonusTimer + " часов.";
+  }
+  if (grandmaBonusTimer <= 0){
+    grandmaBonusTimer = 168;
+    balanceCount = balanceCount + grandmaBonusCount;
     balance.innerHTML ="Карманные деньги: " + balanceCount + "$";
   }
 }, 100);
