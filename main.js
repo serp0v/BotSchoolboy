@@ -97,15 +97,30 @@ const cardToBalanceOperation = document.getElementById('cardToBalanceOperation')
   const cardToBalance = document.getElementById('cardToBalance').value;
   console.log(cardToBalance);
   if (cardToBalance <= bankCardCount) {
-    balanceCount = bankCardCount - +cardToBalance;
-    bankCardCount = bankCardCount + +cardToBalance;
+    balanceCount = balanceCount + +cardToBalance;
+    bankCardCount = bankCardCount - +cardToBalance;
     bankCard.innerHTML ="На карте: " + bankCardCount + "$";
     balance.innerHTML ="Карманные деньги: " + balanceCount + "$";
   }
   if (cardToBalance > bankCardCount) {
     console.log('error');
   }
-} ;
+}
+
+// const balanceToCardOperation = document.getElementById('balanceToCardOperation').onclick = () => {
+//   const balanceToCard = document.getElementById('balanceToCard').value;
+//   console.log(balanceToCard);
+//   if (balanceToCard <= balanceCount) {
+//     balanceCount = balanceCount - +balanceToCard;
+//     bankCardCount = bankCardCount + +balanceToCard;
+//     bankCard.innerHTML ="На карте: " + bankCardCount + "$";
+//     balance.innerHTML ="Карманные деньги: " + balanceCount + "$";
+//   }
+//   if (cardToBalance > balanceCount) {
+//     console.log('error');
+//   }
+// }
+
 // Уровень
 
 const level = document.getElementById('level');
