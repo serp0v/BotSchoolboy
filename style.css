@@ -1,36 +1,123 @@
+/* внешние элементы в vw */
+/* внутренние все в процентах */
+/* медиа запрос на соотношение сторон */
+* {
+    box-sizing: border-box;
+}
 body, html {
     height: 100vh;
     width: 100vw;
     padding: 0;
     margin: 0;
-    box-sizing: border-box;
+    /* overflow: hidden; */
 }
-.wrapper {
+[class$="__block"] {
+    display: flex;
+    width: 100%;
+}
+.profile-wrapper {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+}
+.profile-container {
+    display: flex;
+    height: 100vh;
+    width: 56.25vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(139, 133, 133);
+}
+.profile-container > div{
+    width: 88.88888887%;
+}
+.system-btns__block {
+    height: 10.9375%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.system-btns-panel {
+    border: 0.1vh solid #000;
+    height: 42.8571%;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+.avatar-info-contaiter {
+    height: 25%;
     display: flex;
     flex-direction: row;
 }
-.informerColumn {
-    height: 100vh;
-    width: 50vw;
+.avatar {
+    height: 87.5%;
+    width: 50%;
+    display: flex;
+    /* border: 0.1vh solid #000; */
+}
+.avatar-image {
+    width: 87.5%;
+    border: 0.1vh solid #000;
+}
+.level {
+}
+.nick-id-reg-scool-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    height: 100%;
+    width: 50%;
 }
-.left {
-    background-color: rgb(99, 255, 110);
+.nick-id-reg-scool-container > div{
+    height: 28.5714%;
 }
-.informer {
-    display: flex;
+.nick-id-reg-scool-container > div > div {
+    height: 50%;
+    border: 0.1vh solid #000;
+}
+.balance__block {
+    height: 15.625%;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    /* margin: 0 auto; */
-    /* flex-direction: row; */
-    height: 10%;
+}
+.achievments__block {
+    height: 15.625%;
+    flex-direction: column;
+}
+.balance-achievments {
+    height: 40%;
+    border: 0.1vh solid #000;
     width: 100%;
-}
-.informer > div {
     display: flex;
-    /* flex-direction: row; */
-    align-items: center;
+}
+.property__block {
+    height: 25%;
+    flex-direction: column;
+}
+.property-title {
+    height: 25%;
+    border: 0.1vh solid #000;
+}
+.property-content {
+    height: 62.5%;
+    border: 0.1vh solid #000;
+}
+.like-dislike-container {
+    height: 7.8125%;
+    /* border: 0.1vh solid #000; */
+    display: flex;
+    /* justify-content: center; */
+    /* align-items: center; */
+
+}
+.like-dislike-btn {
+    height: 60%;
+    width: 46.875%;
+    display: flex;
+    border: 0.1vh solid #000;
+}
+.like-dislike-btn ~ .like-dislike-btn {
+    margin-left: 6.25%;
 }
