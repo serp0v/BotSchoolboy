@@ -91,6 +91,35 @@ setInterval(() => {
   }
 }, 1000);
 
+// Динамическая валюта
+
+const coinBalance = document.querySelector('#coinBalance');
+let dynamicCoinBalance = 0;
+
+const howMuchCoin = document.querySelector('#howMuchCoin').value;
+const howMuchCoinSell = document.querySelector('#howMuchCoinSell').value;
+
+
+coinBalance.innerHTML = "У вас " + dynamicCoinBalance + " монет";
+
+function randomInteger(min, max) {
+  // случайное число от min до (max+1)
+  let rand = min + Math.random() * (max + 1 - min);
+  return Math.floor(rand);  
+}
+
+const dynamicCoin = document.querySelector('#dynamicCoin');
+let dynamicCoinCount = randomInteger(1000,2000);
+let dynamicCoinCost = howMuchCoin * dynamicCoinCount;
+
+dynamicCoin.innerHTML = "Текущий курс валюты: " + dynamicCoinCount;
+
+setInterval(() => {
+  let dynamicCoinCount = randomInteger(1000,2000);
+  // console.log(dynamicCoinCount, "123")
+  dynamicCoin.innerHTML = "Текущий курс валюты: " + dynamicCoinCount;
+}, 10000);
+
 // Денежные операции
 
 // с карты на баланс
@@ -136,8 +165,22 @@ const buyDynamicCoin = document.querySelector('#buyDynamicCoin').onclick = () =>
     balance.innerHTML ="Карманные деньги: " + balanceCount + "$";
     coinBalance.innerHTML = "У вас " + dynamicCoinBalance + " монет";
   }
-  if (dynamicCoinCost > balanceCount) {
-    console.log('мало денег');
+  // if (dynamicCoinCost > balanceCount) {
+  //   console.log('мало денег');
+  // }
+};
+
+// продажа динамической валюты
+
+const sellDynamicCoin = document.querySelector('#sellDynamicCoin').onclick = () => {
+  const howMuchCoinSell = document.querySelector('#howMuchCoinSell').value;
+  let dynamicCoinSellCost = howMuchCoinSell * dynamicCoinCount;
+  console.log(dynamicCoinSellCost)
+  if (howMuchCoinSell <= dynamicCoinBalance) {
+    dynamicCoinBalance = dynamicCoinBalance - +howMuchCoinSell;
+    coinBalance.innerHTML = "У вас " + dynamicCoinBalance + " монет";
+    balanceCount = balanceCount + +dynamicCoinSellCost;
+    balance.innerHTML ="Карманные деньги: " + balanceCount + "$";
   }
 };
 
@@ -266,26 +309,3 @@ setInterval(() => {
     balance.innerHTML ="Карманные деньги: " + balanceCount + "$";
   }
 }, 100);
-
-// Динамическая валюта
-
-const coinBalance = document.querySelector('#coinBalance');
-let dynamicCoinBalance = 0;
-coinBalance.innerHTML = "У вас " + dynamicCoinBalance + " монет";
-
-function randomInteger(min, max) {
-  // случайное число от min до (max+1)
-  let rand = min + Math.random() * (max + 1 - min);
-  return Math.floor(rand);  
-}
-
-const dynamicCoin = document.querySelector('#dynamicCoin');
-let dynamicCoinCount = randomInteger(1000,2000);
-// console.log(dynamicCoinCount, "12")
-dynamicCoin.innerHTML = "Текущий курс валюты: " + dynamicCoinCount;
-
-setInterval(() => {
-  let dynamicCoinCount = randomInteger(1000,2000);
-  // console.log(dynamicCoinCount, "123")
-  dynamicCoin.innerHTML = "Текущий курс валюты: " + dynamicCoinCount;
-}, 10000);
