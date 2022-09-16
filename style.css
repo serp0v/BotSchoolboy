@@ -47,6 +47,16 @@ body, html {
     align-items: center;
     display: flex;
     justify-content: center;
+    flex-direction: row;
+}
+.system-btns-panel > div{
+    height: 100%;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 0.1vh solid #000; 
 }
 .avatar-info-contaiter {
     height: 25%;
@@ -103,6 +113,35 @@ body, html {
 .property-content {
     height: 62.5%;
     border: 0.1vh solid #000;
+    display: flex;
+    flex-direction: row;
+}
+.property-content > div {
+    height: 100%;
+    width: 33.3%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 0.1vh solid #000;
+}
+.balance-rows > div {
+    height: 100%;
+    width: 33.3%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 0.1vh solid #000;
+}
+.achievments-row > div {
+    height: 100%;
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 0.1vh solid #000; 
 }
 .like-dislike-container {
     height: 7.8125%;
@@ -116,8 +155,15 @@ body, html {
     height: 60%;
     width: 46.875%;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     border: 0.1vh solid #000;
 }
 .like-dislike-btn ~ .like-dislike-btn {
     margin-left: 6.25%;
+}
+.profile-block-title {
+    display: flex;justify-content: center;align-items: center;
+    font-size: 3vh;
 }

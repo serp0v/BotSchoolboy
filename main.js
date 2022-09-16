@@ -7,43 +7,45 @@
 
 
 
-// const clock = document.getElementById("getRegData")
-// const playerNick = document.getElementById("playerNick")
+const clock = document.getElementById("getRegData")
+const playerNick = document.getElementById("playerNick")
 
-// const config = {
-//   timeZone: "Europe/Moscow",
-// }
-// const today = new Date();
-// const time = today.toLocaleTimeString("ru-RU", {year: 'numeric', month: '2-digit', day: '2-digit', timeZone: config.timeZone})
+const config = {
+  timeZone: "Europe/Moscow",
+}
+const today = new Date();
+const time = today.toLocaleTimeString("ru-RU", {year: 'numeric', month: '2-digit', day: '2-digit', timeZone: config.timeZone})
 
-// const timePad = () => {
-//   let PlayerRegDate = localStorage.getItem('PlayerRegDate', 0);
-//   let nickName = "Alexandr";
-//   if (PlayerRegDate == null) {
-//     localStorage.setItem('PlayerRegDate', time);
-//     playerNick.innerHTML = nickName + ", дата регистрации: " + time;
-//   }
-//   playerNick.innerHTML = nickName + ", дата регистрации: " + localStorage.getItem('PlayerRegDate');
-// }
+const timePad = () => {
+  let PlayerRegDate = localStorage.getItem('PlayerRegDate', 0);
+  let nickName = "Alexandr";
+  if (PlayerRegDate == null) {
+    localStorage.setItem('PlayerRegDate', time);
+    clock.innerHTML ="В школе с: " + time;
+  }
+  playerNick.innerHTML ="Ник: " + nickName;
+  clock.innerHTML ="В школе с: " + localStorage.getItem('PlayerRegDate');
 
-// timePad();
+}
+
+timePad();
 
 
-// // ID игрока
-// // сохранение в localStorage
+// ID игрока
+// сохранение в localStorage
 
-// const playerIdDom = document.querySelector('#playerIdDom');
-// let playerID = localStorage.getItem('PlayerID', 0);
+const playerIdDom = document.querySelector('#playerIdDom');
+let playerID = localStorage.getItem('PlayerID', 0);
 
-// function getPlayerID() {
-// 	if (playerID == null) {
-// 		playerID = new Date().getTime();
-// 		localStorage.setItem('PlayerID', playerID);
-// 	}
-//   playerIdDom.innerHTML = "Ваш ID: " + localStorage.getItem('PlayerID').slice(3);
-// }
+function getPlayerID() {
+	if (playerID == null) {
+		playerID = new Date().getTime();
+		localStorage.setItem('PlayerID', playerID);
+	}
+  playerIdDom.innerHTML = "Ваш ID: " + localStorage.getItem('PlayerID').slice(3);
+}
 
-// getPlayerID();
+getPlayerID();
 
 // // уровень сна
 // // данные обнуляются после перезагрузки
@@ -71,54 +73,54 @@
 //   sleepLevel.innerHTML = "Уровень сна: " + sleepCount + "%";
 // }
 
-// // баланс
-// // падает до отрицательного
+// баланс
+// падает до отрицательного
 
-// const balance = document.getElementById('balance');
-// let balanceCount = 100000;
-// balance.innerHTML ="Карманные деньги: " + balanceCount + "$";
+const balance = document.getElementById('balance');
+let balanceCount = 100000;
+balance.innerHTML ="Карманные деньги: " + balanceCount + "$";
 
-// // Карточка
+// Карточка
 
-// const bankCard = document.getElementById('bankCard');
-// let bankCardCount = 10000;
-// bankCard.innerHTML ="На карте: " + bankCardCount + "$";
+const bankCard = document.getElementById('bankCard');
+let bankCardCount = 10000;
+bankCard.innerHTML ="На карте: " + bankCardCount + "$";
 
-// setInterval(() => {
-//   if (bankCardCount) {
-//     bankCardCount = Math.round(bankCardCount + (bankCardCount/1000));
-//     bankCard.innerHTML = "На карте: " + bankCardCount + "$";
-//   }
-// }, 1000);
+setInterval(() => {
+  if (bankCardCount) {
+    bankCardCount = Math.round(bankCardCount + (bankCardCount/1000));
+    bankCard.innerHTML = "На карте: " + bankCardCount + "$";
+  }
+}, 1000);
 
-// // Динамическая валюта
+// Динамическая валюта
 
-// const coinBalance = document.querySelector('#coinBalance');
-// let dynamicCoinBalance = 0;
+const coinBalance = document.querySelector('#coinBalance');
+let dynamicCoinBalance = 0;
 
 // const howMuchCoin = document.querySelector('#howMuchCoin').value;
 // const howMuchCoinSell = document.querySelector('#howMuchCoinSell').value;
 
 
-// coinBalance.innerHTML = "У вас " + dynamicCoinBalance + " монет";
+coinBalance.innerHTML = "У вас " + dynamicCoinBalance + " монет";
 
-// function randomInteger(min, max) {
-//   // случайное число от min до (max+1)
-//   let rand = min + Math.random() * (max + 1 - min);
-//   return Math.floor(rand);  
-// }
+function randomInteger(min, max) {
+  // случайное число от min до (max+1)
+  let rand = min + Math.random() * (max + 1 - min);
+  return Math.floor(rand);  
+}
 
-// const dynamicCoin = document.querySelector('#dynamicCoin');
-// let dynamicCoinCount = randomInteger(1000,2000);
-// let dynamicCoinCost = howMuchCoin * dynamicCoinCount;
+const dynamicCoin = document.querySelector('#dynamicCoin');
+let dynamicCoinCount = randomInteger(1000,2000);
+let dynamicCoinCost = howMuchCoin * dynamicCoinCount;
 
-// dynamicCoin.innerHTML = "Текущий курс валюты: " + dynamicCoinCount;
+dynamicCoin.innerHTML = "Текущий курс валюты: " + dynamicCoinCount;
 
-// setInterval(() => {
-//   let dynamicCoinCount = randomInteger(1000,2000);
-//   // console.log(dynamicCoinCount, "123")
-//   dynamicCoin.innerHTML = "Текущий курс валюты: " + dynamicCoinCount;
-// }, 10000);
+setInterval(() => {
+  let dynamicCoinCount = randomInteger(1000,2000);
+  // console.log(dynamicCoinCount, "123")
+  dynamicCoin.innerHTML = "Текущий курс валюты: " + dynamicCoinCount;
+}, 10000);
 
 // // Денежные операции
 
