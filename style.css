@@ -21,6 +21,7 @@ body, html {
     width: 100vw;
     justify-content: center;
     align-items: center;
+    flex-direction: row;
 }
 .profile-container {
     display: flex;
@@ -29,7 +30,7 @@ body, html {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: rgb(139, 133, 133);
+    background-color: rgb(243, 243, 243);
 }
 .profile-container > div{
     width: 88.88888887%;
@@ -51,7 +52,7 @@ body, html {
 }
 .system-btns-panel > div{
     height: 100%;
-    width: 20%;
+    width: 25%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -166,4 +167,26 @@ body, html {
 .profile-block-title {
     display: flex;justify-content: center;align-items: center;
     font-size: 3vh;
+}
+
+/* mainpage */
+
+.categories-grid {
+    display: grid;
+    width: 100%;
+    height: 76.5625%;
+    /* border: 0.1vh solid #000; */
+    grid-template-areas: 'item item'
+    'item item'
+    'item item';
+}
+.categories-grid__item {
+    display: flex;
+    border: 0.1vh solid #000;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    font-size: 4vh;
+    text-align: center;
 }
